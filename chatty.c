@@ -109,7 +109,7 @@ void *sigHandler(void *arg) {
 	        fprintf(stdout, "\t[SigWaitThread] Ricevuto segnale di chiusura server!\n");
             stop = 1;
         }
-        else if(sig == SIGUSR1){
+        else if(sig == SIGUSR1){   //BUG stampa
             fprintf(stdout, "\t[SigWaitThread]Ricevuto segnale di stampa statistiche!\n");
             FILE * statsFile = fopen(configuration.StatFileName, "a");
             if(statsFile == NULL){
